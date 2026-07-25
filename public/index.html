@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PocketPlan</title>
+  <link rel="stylesheet" href="/styles.css?v=1.0.0">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>PocketPlan</h1>
+      <p class="tagline">Plan a meal or outfit using what you already own.</p>
+    </header>
+
+    <section class="input-panel">
+      <div class="form-row">
+        <label for="mode">Mode</label>
+        <select id="mode" name="mode">
+          <option value="meal">Meal</option>
+          <option value="outfit">Outfit</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="budget">Budget</label>
+        <input type="number" id="budget" min="0" max="1000000" value="20" required>
+      </div>
+
+      <div class="form-row">
+        <label for="ownedItems">Owned items (comma-separated)</label>
+        <textarea id="ownedItems" rows="3" placeholder="rice, eggs, soy sauce"></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="occasion">Occasion</label>
+        <input type="text" id="occasion" placeholder="weeknight dinner" value="daily" required>
+      </div>
+
+      <div class="form-row">
+        <label for="time">Time available (minutes)</label>
+        <input type="number" id="time" min="0" max="1440" value="30" required>
+      </div>
+
+      <div class="form-row">
+        <label for="constraints">Constraints (comma-separated)</label>
+        <textarea id="constraints" rows="2" placeholder="no dairy, quick prep"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button id="planBtn" type="button">Plan</button>
+        <button id="clearBtn" type="button">Clear</button>
+      </div>
+    </section>
+
+    <section id="emergencyBanner" class="emergency-banner hidden" role="alert"></section>
+
+    <section id="result" class="result-panel hidden">
+      <div class="budget-bar">
+        <div class="budget-bar-track">
+          <div id="budgetBarFill" class="budget-bar-fill"></div>
+        </div>
+        <div class="budget-bar-label">
+          <span id="budgetUsed"></span> / <span id="budgetTotal"></span>
+        </div>
+      </div>
+
+      <div class="metric-row">
+        <div class="metric">
+          <div class="metric-label">Zero-waste score</div>
+          <div class="metric-value" id="zeroWasteScore">--</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Options</div>
+          <div class="metric-value" id="optionCount">--</div>
+        </div>
+      </div>
+
+      <div id="warnings" class="warnings"></div>
+      <div id="missingItems" class="missing-items"></div>
+      <div id="options" class="options"></div>
+
+      <details class="decision-trace">
+        <summary>Decision trace</summary>
+        <ol id="publicDecisionTrace"></ol>
+      </details>
+
+      <div id="fallbackNotice" class="fallback-notice hidden">
+        Note: AI model was unavailable; fallback plan shown.
+      </div>
+    </section>
+
+    <footer>
+      <p class="disclaimer">PocketPlan is a planning aid. It does not browse the web, does not retrieve real-time prices, and does not store user data on a server. No financial, medical, or legal advice.</p>
+    </footer>
+  </main>
+
+  <script src="/app.js?v=1.0.0"></script>
+</body>
+</html>
