@@ -1,0 +1,56 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f7; color: #1d1d1f; line-height: 1.5; }
+.container { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
+header { margin-bottom: 24px; }
+header h1 { font-size: 28px; font-weight: 700; }
+.tagline { color: #6e6e73; margin-top: 4px; }
+.input-panel { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 16px; }
+.form-row { margin-bottom: 14px; }
+.form-row label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
+.form-row input, .form-row select, .form-row textarea { width: 100%; padding: 10px 12px; border: 1px solid #d1d1d6; border-radius: 8px; font-size: 15px; font-family: inherit; }
+.form-row textarea { resize: vertical; font-family: inherit; }
+.form-actions { display: flex; gap: 10px; margin-top: 8px; }
+button { padding: 10px 18px; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+#planBtn { background: #0071e3; color: #fff; }
+#planBtn:hover:not(:disabled) { background: #005bb5; }
+#clearBtn { background: #e8e8ed; color: #1d1d1f; }
+.emergency-banner { background: #ff3b30; color: #fff; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; }
+.hidden { display: none !important; }
+.result-panel { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 16px; }
+.budget-bar { margin-bottom: 16px; }
+.budget-bar-track { height: 10px; background: #e8e8ed; border-radius: 5px; overflow: hidden; }
+.budget-bar-fill { height: 100%; background: #34c759; transition: width 0.3s; }
+.budget-bar-fill.warn { background: #ff9500; }
+.budget-bar-fill.critical { background: #ff3b30; }
+.budget-bar-label { margin-top: 6px; font-size: 14px; color: #6e6e73; }
+.metric-row { display: flex; gap: 12px; margin-bottom: 16px; }
+.metric { flex: 1; background: #f5f5f7; padding: 12px; border-radius: 8px; }
+.metric-label { font-size: 12px; color: #6e6e73; text-transform: uppercase; letter-spacing: 0.5px; }
+.metric-value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+.warnings { margin-bottom: 16px; }
+.warning { padding: 10px 14px; border-radius: 8px; margin-bottom: 6px; font-size: 14px; }
+.warning.critical { background: #ffe5e3; color: #c5221f; }
+.warning.warn { background: #fff4e5; color: #aa5500; }
+.warning.info { background: #e5f1ff; color: #0040aa; }
+.missing-items { margin-bottom: 16px; }
+.missing-item { display: inline-block; background: #fff4e5; color: #aa5500; padding: 6px 12px; border-radius: 16px; margin: 0 6px 6px 0; font-size: 13px; }
+.options { margin-bottom: 16px; }
+.option-card { background: #f5f5f7; border-radius: 10px; padding: 16px; margin-bottom: 10px; border: 2px solid transparent; }
+.option-card.best { border-color: #34c759; }
+.option-title { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+.option-meta { font-size: 13px; color: #6e6e73; margin-bottom: 8px; }
+.option-items { font-size: 14px; margin-bottom: 8px; }
+.option-items ul { padding-left: 20px; }
+.option-rationale { font-size: 13px; color: #424245; margin-top: 8px; font-style: italic; }
+.option-score { display: inline-block; background: #e5f1ff; color: #0040aa; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-left: 8px; }
+.decision-trace { margin-top: 16px; padding: 12px; background: #f5f5f7; border-radius: 8px; }
+.decision-trace summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.decision-trace ol { padding-left: 24px; margin-top: 8px; font-size: 14px; }
+.decision-trace li { margin-bottom: 4px; }
+.fallback-notice { background: #fff4e5; color: #aa5500; padding: 10px 14px; border-radius: 8px; font-size: 14px; margin-top: 12px; }
+.disclaimer { font-size: 12px; color: #6e6e73; text-align: center; margin-top: 24px; }
+@media (max-width: 600px) {
+  .container { padding: 16px 12px; }
+  .metric-row { flex-direction: column; }
+}
