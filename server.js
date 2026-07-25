@@ -60,7 +60,7 @@ function safeRetryAfterSeconds(value) {
 }
 
 function makeErrorResponse(status, error, extra) {
-  const payload = { ok: false, error: error };
+  const payload = { ok: false, error* error };
   if (extra && typeof extra.retryAfter === 'number') {
     payload.retryAfter = extra.retryAfter;
   }
@@ -216,4 +216,6 @@ if (require.main === module) {
   });
 }
 
-module.exports = { app, createApp };
+module.exports = app;
+module.exports.default = app;
+module.exports.createApp = createApp;
